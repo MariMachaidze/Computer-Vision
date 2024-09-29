@@ -24,7 +24,6 @@ def load(image_path):
 
     out = io.imread(image_path)
 
-
     ### END YOUR CODE
 
     # Let's convert the image to be between the correct range.
@@ -49,7 +48,10 @@ def crop_image(image, start_row, start_col, num_rows, num_cols):
     out = None
 
     ### YOUR CODE HERE
-    pass
+    # pass
+
+    out = image[start_row:start_row+num_rows, start_col:start_col+num_cols]
+
     ### END YOUR CODE
 
     return out
