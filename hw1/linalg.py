@@ -171,7 +171,12 @@ def get_eigen_values_and_vectors(M, k):
     ### YOUR CODE HERE
     # pass
     eigenvalues, eigenvectors = eigen_decomp(M)
-    eigenvalues = np.argsort(eigenvalues, axis = 0)
-    eigenvectors = np.argsort(eigenvectors, axis = 0)
+    eigenvalues = abs(eigenvalues) # take absodule eigenvalues
+
+    indices = np.argsort(-eigenvalues) #s ort them to be descending
+    indices = indices[:k] # take top k values
+
+    eigenvalues = eigenvalues[indices] # get top k eigenvalues
+    eigenvectors = eigenvectors[:, indices] # get top k eigenvectors
     ### END YOUR CODE
     return eigenvalues[:k], eigenvectors[:k]

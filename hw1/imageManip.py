@@ -23,6 +23,7 @@ def load(image_path):
     # pass
 
     out = io.imread(image_path)
+    
 
     ### END YOUR CODE
 
