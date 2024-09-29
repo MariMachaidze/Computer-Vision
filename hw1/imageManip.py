@@ -74,7 +74,10 @@ def dim_image(image):
     out = None
 
     ### YOUR CODE HERE
-    pass
+    # pass
+
+    out = image * image * 0.5
+
     ### END YOUR CODE
 
     return out
