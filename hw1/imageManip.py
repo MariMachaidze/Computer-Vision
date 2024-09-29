@@ -105,7 +105,17 @@ def resize_image(input_image, output_rows, output_cols):
     #    > This should require two nested for loops!
 
     ### YOUR CODE HERE
-    pass
+    # pass
+
+    row_scale_factor = input_rows / output_rows
+    col_scale_factor = input_cols / output_cols
+
+    for i in range(output_rows):
+        for j in range(output_cols):
+            input_i = int(i * row_scale_factor)
+            input_j = int(j * col_scale_factor)
+            output_image[i, j, :] = input_image[input_i, input_j, :]
+
     ### END YOUR CODE
 
     # 3. Return the output image
