@@ -102,31 +102,6 @@ def conv_fast(image, kernel):
 
     return out
 
-def conv_faster(image, kernel):
-    """
-    Args:
-        image: numpy array of shape (Hi, Wi).
-        kernel: numpy array of shape (Hk, Wk).
-
-    Returns:
-        out: numpy array of shape (Hi, Wi).
-    """
-    Hi, Wi = image.shape
-    Hk, Wk = kernel.shape
-    out = np.zeros((Hi, Wi))
-
-    ### YOUR CODE HERE
-    
-    
-
-
-
-
-
-    ### END YOUR CODE
-
-    return out
-
 def cross_correlation(f, g):
     """ Cross-correlation of f and g.
 
@@ -142,7 +117,9 @@ def cross_correlation(f, g):
 
     out = None
     ### YOUR CODE HERE
-    pass
+    
+    out = conv_fast(f, g)
+
     ### END YOUR CODE
 
     return out
@@ -164,7 +141,11 @@ def zero_mean_cross_correlation(f, g):
 
     out = None
     ### YOUR CODE HERE
-    pass
+    
+    g = g - np.mean(g)
+
+    out = cross_correlation(f, g)
+
     ### END YOUR CODE
 
     return out
