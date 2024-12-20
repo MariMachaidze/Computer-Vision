@@ -32,10 +32,10 @@ def read_facial_labels(image_paths):
     f = open(label_path, "r")
     f.readline()
     f.readline()
-    lefteyes = np.array([], dtype=np.int).reshape(0, 2)
-    righteyes = np.array([], dtype=np.int).reshape(0, 2)
-    noses = np.array([], dtype=np.int).reshape(0, 2)
-    mouths = np.array([], dtype=np.int).reshape(0, 2)
+    lefteyes = np.array([], dtype=int).reshape(0, 2)
+    righteyes = np.array([], dtype=int).reshape(0, 2)
+    noses = np.array([], dtype=int).reshape(0, 2)
+    mouths = np.array([], dtype=int).reshape(0, 2)
     for line in f:
         if lefteyes.shape[0] > 40:
             break
